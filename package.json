@@ -1,0 +1,52 @@
+{
+  "name": "car-physics",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@pmndrs/branding": "github:pmndrs/branding",
+    "@react-three/cannon": "6.4.0",
+    "@react-three/drei": "9.34.4",
+    "@react-three/fiber": "8.8.10",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "cross-env": "^7.0.3",
+    "gsap": "^3.11.4",
+    "increase-memory-limit": "^1.0.7",
+    "rc-footer": "^0.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-loadingbar": "^0.0.1",
+    "react-redux-loading-bar": "^5.0.4",
+    "react-router-dom": "^6.8.1",
+    "react-scripts": "5.0.1",
+    "three": "0.145.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "fix-memory-limit": "cross-env LIMIT=4096 increase-memory-limit"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

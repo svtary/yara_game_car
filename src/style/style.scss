@@ -1,0 +1,397 @@
+body,
+#root,
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+.pageWrap {
+  background: darkgray;
+}
+.loadingWrap {
+  height: 100vh;
+  z-index: 2;
+  position: absolute;
+  color: white;
+}
+.pannels {
+  top: 0px;
+  z-index: 1;
+
+  .pannel {
+    background: black;
+  }
+}
+//보더
+.border {
+  border: 1px solid gray;
+}
+//레이아웃
+.p {
+  &-fixed {
+    position: fixed;
+  }
+}
+.d {
+  &-inline-block {
+    display: inline-block;
+  }
+  &-block {
+    display: block !important;
+  }
+  &-flex {
+    display: flex;
+  }
+  &-grid {
+    display: grid;
+  }
+  &-none {
+    display: none;
+  }
+}
+.align {
+  &-items-center {
+    align-items: center !important;
+  }
+  &-items-start {
+    align-items: start !important;
+  }
+  &-items-end {
+    align-items: flex-end !important;
+  }
+  &-content-between {
+    align-content: space-between;
+  }
+  &-items-stretch {
+    align-items: stretch;
+  }
+}
+.flex {
+  &-row {
+    flex-direction: row;
+  }
+  &-column {
+    flex-direction: column;
+  }
+  &-nowrap {
+    flex-wrap: nowrap;
+  }
+}
+.justify {
+  &-content-center {
+    justify-content: center;
+  }
+  &-content-start {
+    justify-content: flex-start;
+  }
+  &-content-between {
+    justify-content: space-between;
+  }
+  &-content-end {
+    justify-content: flex-end;
+  }
+}
+.overflow {
+  &-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  &-hidden {
+    overflow: hidden;
+  }
+}
+@mixin positionStyle() {
+  &-relative {
+    position: relative !important;
+  }
+  &-absolute {
+    position: absolute !important;
+  }
+  &-sticky {
+    position: sticky !important;
+  }
+}
+.position {
+  @include positionStyle();
+}
+//크기
+.h {
+  &-100 {
+    height: 100%;
+  }
+  &v-100 {
+    height: 100vh;
+  }
+}
+.w {
+  &-100 {
+    width: 100%;
+  }
+  &v-100 {
+    width: 100vh;
+  }
+}
+// 간격
+@mixin marginStyle($value) {
+  margin: $value !important;
+  &-h {
+    height: $value !important;
+  }
+  &-w {
+    width: $value !important;
+  }
+  &-t {
+    margin-top: $value !important;
+  }
+  &-r {
+    margin-right: $value !important;
+  }
+  &-b {
+    margin-bottom: $value !important;
+  }
+  &-l {
+    margin-left: $value !important;
+  }
+  &-x {
+    margin-left: $value !important;
+    margin-right: $value !important;
+  }
+}
+@mixin marginHandle() {
+  &0 {
+    @include marginStyle(0rem);
+  }
+  &4 {
+    @include marginStyle(0.4rem);
+  }
+  &8 {
+    @include marginStyle(0.8rem);
+  }
+  &16 {
+    @include marginStyle(1.6rem);
+  }
+  &24 {
+    @include marginStyle(2.4rem);
+  }
+  &32 {
+    @include marginStyle(3.2rem);
+  }
+  &48 {
+    @include marginStyle(4.8rem);
+  }
+  &56 {
+    @include marginStyle(5.6rem);
+  }
+}
+.m {
+  @include marginHandle();
+}
+@mixin paddingStyle($value) {
+  padding: $value !important;
+  &-h {
+    height: $value !important;
+  }
+  &-w {
+    width: $value !important;
+  }
+  &-t {
+    padding-top: $value !important;
+  }
+  &-r {
+    padding-right: $value !important;
+  }
+  &-b {
+    padding-bottom: $value !important;
+  }
+  &-l {
+    padding-left: $value !important;
+  }
+  &-x {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+}
+@mixin paddingHandle() {
+  &0 {
+    @include paddingStyle(0rem);
+  }
+  &4 {
+    @include paddingStyle(0.4rem);
+  }
+  &8 {
+    @include paddingStyle(0.8rem);
+  }
+  &16 {
+    @include paddingStyle(1.6rem);
+  }
+  &24 {
+    @include paddingStyle(2.4rem);
+  }
+  &32 {
+    @include paddingStyle(3.2rem);
+  }
+  &48 {
+    @include paddingStyle(4.8rem);
+  }
+  &56 {
+    @include paddingStyle(5.6rem);
+  }
+}
+.p {
+  @include paddingHandle();
+}
+//그리드
+@mixin columnStart($value) {
+  grid-column-start: $value;
+}
+@mixin columnStartHandle() {
+  &-1 {
+    @include columnStart(1);
+  }
+  &-2 {
+    @include columnStart(2);
+  }
+  &-3 {
+    @include columnStart(3);
+  }
+  &-4 {
+    @include columnStart(4);
+  }
+  &-5 {
+    @include columnStart(5);
+  }
+  &-6 {
+    @include columnStart(6);
+  }
+  &-7 {
+    @include columnStart(7);
+  }
+  &-8 {
+    @include columnStart(8);
+  }
+  &-9 {
+    @include columnStart(9);
+  }
+  &-10 {
+    @include columnStart(10);
+  }
+  &-11 {
+    @include columnStart(11);
+  }
+  &-12 {
+    @include columnStart(12);
+  }
+}
+//grid-column-start
+.gcs {
+  @include columnStartHandle();
+}
+@mixin columnEnd($value) {
+  grid-column-end: $value;
+}
+@mixin columnEndHandle() {
+  &--1 {
+    @include columnEnd(-1);
+  }
+  &-1 {
+    @include columnEnd(1);
+  }
+  &-2 {
+    @include columnEnd(2);
+  }
+  &-3 {
+    @include columnEnd(3);
+  }
+  &-4 {
+    @include columnEnd(4);
+  }
+  &-5 {
+    @include columnEnd(5);
+  }
+  &-6 {
+    @include columnEnd(6);
+  }
+  &-7 {
+    @include columnEnd(7);
+  }
+  &-8 {
+    @include columnEnd(8);
+  }
+  &-9 {
+    @include columnEnd(9);
+  }
+  &-10 {
+    @include columnEnd(10);
+  }
+  &-11 {
+    @include columnEnd(11);
+  }
+  &-12 {
+    @include columnEnd(12);
+  }
+  &-13 {
+    @include columnEnd(13);
+  }
+}
+// grid-column-end
+.gce {
+  @include columnEndHandle();
+}
+//grid-column
+@mixin gridColumnSpan($value) {
+  // 영역 지정, 지정을 하지 않으면 inherit
+  // grid-column-start, grid-column-end 축약형
+  // grid-column: 1 / 3 1에서 3번까지
+  // grid-column: 1 / span 2 1 번에서 몇개의 칸을 차지할 것인가
+  // grid-column: 2 2번 부터 한칸
+  grid-column: span $value;
+}
+@mixin gridColumnSpanHandle() {
+  &1 {
+    @include gridColumnSpan(1);
+  }
+  &2 {
+    @include gridColumnSpan(2);
+  }
+  &3 {
+    @include gridColumnSpan(3);
+  }
+  &4 {
+    @include gridColumnSpan(4);
+  }
+  &5 {
+    @include gridColumnSpan(5);
+  }
+  &6 {
+    @include gridColumnSpan(6);
+  }
+  &7 {
+    @include gridColumnSpan(7);
+  }
+  &8 {
+    @include gridColumnSpan(8);
+  }
+  &9 {
+    @include gridColumnSpan(9);
+  }
+  &10 {
+    @include gridColumnSpan(10);
+  }
+  &11 {
+    @include gridColumnSpan(11);
+  }
+  &12 {
+    @include gridColumnSpan(12);
+  }
+}
+.gc {
+  @include gridColumnSpanHandle();
+}
